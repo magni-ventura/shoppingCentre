@@ -9,6 +9,7 @@
     "targets": {
       "e2e": {
         "executor": "@nx/jest:jest",
+        "type": "module",
         "outputs": [
           "{projectRoot}/test-output/jest/coverage"
         ],

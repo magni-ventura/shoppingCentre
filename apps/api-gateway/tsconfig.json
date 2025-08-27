@@ -7,9 +7,6 @@
       "path": "./tsconfig.app.json"
     },
     {
-      "path": "./tsconfig.spec.json"
-    },
-    {
   "compilerOptions": {
     "module": "ESNext",
     "target": "ES2020",

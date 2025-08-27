@@ -6,6 +6,7 @@
     "targets": {
       "build": {
         "executor": "@nx/esbuild:esbuild",
+        "type": "module",
         "outputs": [
           "{options.outputPath}"
         ],

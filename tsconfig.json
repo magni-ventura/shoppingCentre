@@ -8,6 +8,26 @@
     },
     {
       "path": "./apps/auth-service"
-    }
+    },
+    {
+      "path": "./apps/api-gateway"
+    },
+    {
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ES2020",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "baseUrl": "."
+    },
+  "include": [
+    "apps/**/*",
+    "packages/**/*"   // 👈 add this so error-handler is picked up
+  ]
+}
+
   ]
 }
