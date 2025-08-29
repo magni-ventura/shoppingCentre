@@ -8,7 +8,8 @@
   },
   "include": [
     "jest.config.ts",
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "packages/**/**/*"   // 👈 add this so error-handler is picked up
   ],
   "references": []
 }

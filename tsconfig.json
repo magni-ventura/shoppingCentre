@@ -3,34 +3,29 @@
   "compileOnSave": false,
   "files": [],
   "references": [
-    {
-      "path": "./apps/auth-service-e2e"
-    },
-    {
-      "path": "./apps/auth-service"
-    },
-    {
-      "path": "./apps/api-gateway"
-    },
-    {
+    { "path": "./apps/auth-service-e2e" },
+    { "path": "./apps/auth-service" },
+    { "path": "./apps/api-gateway" }
+  ],
   "compilerOptions": {
-    "module": "ESNext",
-    "target": "ES2020",
-    "moduleResolution": "Node",
+    "module": "nodenext",
+    "target": "es2022",
+    "moduleResolution": "nodenext",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "strict": true,
-    "baseUrl": "."
-    },
+    "baseUrl": ".",
+    "outDir": "../../dist/out-tsc",
+    "declaration": true,
+    "types": ["node"],
+    "paths": {
+      "@shopping-centre/error-handler": ["packages/src/error-handler/index.ts"]
+    }
+  },
   "include": [
     "apps/**/*",
-    "packages/**/*"   // 👈 add this so error-handler is picked up
-  ],
-  "paths": {
-  "@shopping-centre/error-handler": ["packages/error-handler/index.ts"]
-  }
-}
-
+    "packages/**/*",
+    "**/*.ts"
   ]
 }

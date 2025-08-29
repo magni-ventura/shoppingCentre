@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from "cors";
-import { errorMiddleware } from "@shopping-centre/error-handler";
+import { errorMiddleware } from "packages/src/error-handler";
 
 
 

@@ -8,6 +8,8 @@
     "lib": ["es2022"],
     "module": "nodenext",
     "moduleResolution": "nodenext",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
@@ -16,6 +18,12 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
-    "customConditions": ["development"]
+    "customConditions": ["development"],
+    "baseUrl": ".",
+    "paths": {
+      "@shopping-centre/error-handler": ["packages/error-handler/index.ts"],
+      "@shopping-centre/lib": ["lib/src/index.ts"],
+      "@shopping-centre/packages": ["packages/src/index.ts"]
+    }
   }
 }

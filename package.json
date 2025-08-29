@@ -44,17 +44,12 @@
     "jest": "^30.0.2",
     "jest-environment-node": "^30.0.2",
     "jest-util": "^30.0.2",
-    "nx": "21.4.1",
-    "react-refresh": "^0.10.0",
-    "ts-jest": "^29.4.0",
-    "ts-node": "10.9.1",
-    "tslib": "^2.3.0",
-    "typescript": "~5.8.2",
-    "webpack-cli": "^5.1.4",
-    "type": "module",
     "name": "error-handler",
-    "sourceRoot": "packages/error-handler",
+    "nx": "21.4.1",
+    "prettier": "^2.6.2",
     "projectType": "library",
+    "react-refresh": "^0.10.0",
+    "sourceRoot": "packages/error-handler",
     "targets": {
       "build": {
         "executor": "@nx/js:tsc",
@@ -64,12 +59,14 @@
           "tsConfig": "packages/error-handler/tsconfig.json"
         }
       }
-    }
-
-
+    },
+    "ts-jest": "^29.4.0",
+    "ts-node": "10.9.1",
+    "tslib": "^2.3.0",
+    "type": "module",
+    "typescript": "~5.8.2",
+    "webpack-cli": "^5.1.4"
   },
-  
-  
   "workspaces": [
     "apps/*"
   ]

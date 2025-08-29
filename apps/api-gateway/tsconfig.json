@@ -8,9 +8,9 @@
     },
     {
   "compilerOptions": {
-    "module": "ESNext",
-    "target": "ES2020",
-    "moduleResolution": "Node",
+    "module": "nodenext",
+    "target": "es2022",
+    "moduleResolution": "nodenext",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
@@ -19,7 +19,7 @@
     },
   "include": [
     "apps/**/*",
-    "packages/**/*"   // 👈 add this so error-handler is picked up
+    "packages/**/**/*"   // 👈 add this so error-handler is picked up
   ]
 }
 

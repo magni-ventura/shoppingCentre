@@ -1,9 +1,14 @@
+export * from '../lib/lib';
+
+//import { Request, Response, NextFunction } from "express";
+//import { errorMiddleware } from '@shopping-centre/error-handler';
+
 export class AppError extends Error {
   public readonly statusCode: number;
   public readonly isOperational: boolean;
   public readonly details?: any;
 
-  constructor(message: string, statusCode: number, isOperational = true, details? : any) {
+  constructor(message: string, statusCode: number, isOperational = true, details?: any) {
     super(message);
     this.statusCode = statusCode;
     this.isOperational = isOperational;
@@ -12,45 +17,45 @@ export class AppError extends Error {
   }
 }
 
-//NOT FOUND ERROR
+
+// NOT FOUND ERROR
 export class NotFoundError extends AppError {
-  constructor(message = "Resources not found", statusCode: number,) {
-    super(message, 404);
+  constructor(message = "Resource not found", details?: any) {
+    super(message, 404, true, details);
   }
 }
 
-//VALIDATION ERROR (used for joi/zod/react-hook-form validation errors)
-
-export class validationError extends AppError {
+// VALIDATION ERROR
+export class ValidationError extends AppError {
   constructor(message = "Invalid data", details?: any) {
-    super (message, 400, true, details);
+    super(message, 400, true, details);
   }
 }
 
-//Authentication Error
+// Authentication Error
 export class AuthError extends AppError {
   constructor(message = "Unauthorized", details?: any) {
-    super (message, 401);
+    super(message, 401, true, details);
   }
 }
 
-//Forbidden Error (For In sufficient Permissions)
+// Forbidden Error
 export class ForbiddenError extends AppError {
   constructor(message = "Access Forbidden", details?: any) {
-    super (message, 403);
+    super(message, 403, true, details);
   }
 }
 
-//Database Error (For MongoDB/Postgres Errors)
+// Database Error
 export class DatabaseError extends AppError {
   constructor(message = "Database Error", details?: any) {
-    super (message, 500, true, details);
+    super(message, 500, true, details);
   }
 }
 
-//RATE LIMIT ERROR (If user exceeds API limits)
+// Rate Limit Error
 export class RateLimitError extends AppError {
-  constructor(message = "Too many requests, please tryagain later", details?: any) {
-    super (message, 429);
+  constructor(message = "Too many requests, please try again later", details?: any) {
+    super(message, 429, true, details);
   }
 }
