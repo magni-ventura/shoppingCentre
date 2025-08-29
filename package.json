@@ -51,8 +51,24 @@
     "tslib": "^2.3.0",
     "typescript": "~5.8.2",
     "webpack-cli": "^5.1.4",
-    "type": "module"
+    "type": "module",
+    "name": "error-handler",
+    "sourceRoot": "packages/error-handler",
+    "projectType": "library",
+    "targets": {
+      "build": {
+        "executor": "@nx/js:tsc",
+        "options": {
+          "outputPath": "dist/packages/error-handler",
+          "main": "packages/error-handler/index.ts",
+          "tsConfig": "packages/error-handler/tsconfig.json"
+        }
+      }
+    }
+
+
   },
+  
   
   "workspaces": [
     "apps/*"

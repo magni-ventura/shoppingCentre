@@ -1,7 +1,7 @@
 export class AppError extends Error {
   public readonly statusCode: number;
   public readonly isOperational: boolean;
-  public readonly details: any;
+  public readonly details?: any;
 
   constructor(message: string, statusCode: number, isOperational = true, details? : any) {
     super(message);
@@ -22,35 +22,35 @@ export class NotFoundError extends AppError {
 //VALIDATION ERROR (used for joi/zod/react-hook-form validation errors)
 
 export class validationError extends AppError {
-  constructor(message = "Invalid data", details? : any) {
+  constructor(message = "Invalid data", details?: any) {
     super (message, 400, true, details);
   }
 }
 
 //Authentication Error
 export class AuthError extends AppError {
-  constructor(message = "Unauthorized", details? : any) {
+  constructor(message = "Unauthorized", details?: any) {
     super (message, 401);
   }
 }
 
 //Forbidden Error (For In sufficient Permissions)
 export class ForbiddenError extends AppError {
-  constructor(message = "Access Forbidden", details? : any) {
+  constructor(message = "Access Forbidden", details?: any) {
     super (message, 403);
   }
 }
 
 //Database Error (For MongoDB/Postgres Errors)
 export class DatabaseError extends AppError {
-  constructor(message = "Database Error", details? : any) {
+  constructor(message = "Database Error", details?: any) {
     super (message, 500, true, details);
   }
 }
 
 //RATE LIMIT ERROR (If user exceeds API limits)
 export class RateLimitError extends AppError {
-  constructor(message = "Too many requests, please tryagain later", details? : any) {
+  constructor(message = "Too many requests, please tryagain later", details?: any) {
     super (message, 429);
   }
 }

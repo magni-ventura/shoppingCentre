@@ -1,8 +1,7 @@
-import { error } from "console";
-import { AppError } from "index";
-import { Request, Response } from "express";
+import { AppError } from "./index";
+import { NextFunction, Request, Response } from "express";
 
-export const errorMiddleware = (err: Error,req:Request,res:Response) => {
+export const errorMiddleware = (err: Error,req:Request,res:Response,_next:NextFunction) => {
   if (err instanceof AppError){
     console.log(`Error ${req.method} ${req.url} - ${err.message}`);
 

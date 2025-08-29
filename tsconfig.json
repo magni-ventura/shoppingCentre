@@ -26,7 +26,10 @@
   "include": [
     "apps/**/*",
     "packages/**/*"   // 👈 add this so error-handler is picked up
-  ]
+  ],
+  "paths": {
+  "@shopping-centre/error-handler": ["packages/error-handler/index.ts"]
+  }
 }
 
   ]
