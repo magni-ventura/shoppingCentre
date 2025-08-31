@@ -5,6 +5,6 @@
     "declaration": true,
     "types": ["node"]
   },
-  "include": ["src/**/*.ts", "src/error-handler/index.ts", "src/error-handler/error-middleware.ts"],
-  "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+  "include": ["error-handler/src/**/*.ts", "error-handler/src/index.ts", "error-handler/src/error-middleware.ts"],
+  "exclude": ["jest.config.ts", "error-handler/src/**/*.spec.ts", "error-handler/src/**/*.test.ts"]
 }

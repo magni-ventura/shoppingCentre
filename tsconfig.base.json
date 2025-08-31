@@ -21,9 +21,10 @@
     "customConditions": ["development"],
     "baseUrl": ".",
     "paths": {
-      "@shopping-centre/error-handler": ["packages/error-handler/index.ts"],
-      "@shopping-centre/lib": ["lib/src/index.ts"],
-      "@shopping-centre/packages": ["packages/src/index.ts"]
+    "@shopping-centre/error-handler": ["packages/error-handler/src/index.ts"],
+    "@shopping-centre/*": ["packages/*/src/index.ts"],
+    "@shopping-centre/lib": ["lib/src/index.ts"],
+    "@shopping-centre/packages": ["packages/src/index.ts"]
     }
   }
 }

@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "module": "nodenext",
+    "outDir": "../../dist/out-tsc",
+    "declaration": true,
+    "rootDir": "./src",
+    "types": []
+
+  },
+  "files": [],
+  "include": ["src/**/*.ts", "src/error-middleware.ts"],
+  "references": [
+    {
+      "path": "../../packages/tsconfig.lib.json"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from "cors";
-import { errorMiddleware } from "packages/src/error-handler";
+import { errorMiddleware } from "../../../packages/error-handler/src";
+import cookieParser from 'cookie-parser';
 
 
 
@@ -16,6 +17,10 @@ app.use(
     credentials: true
   })
 );
+
+app.use(express.json());
+
+app.use(cookieParser());
 
 app.get('/', (req, res) => {
     res.send({ 'message': 'Hello API'});

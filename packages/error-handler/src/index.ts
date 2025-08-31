@@ -1,4 +1,4 @@
-export * from '../lib/lib';
+export * from './error-middleware';
 
 //import { Request, Response, NextFunction } from "express";
 //import { errorMiddleware } from '@shopping-centre/error-handler';
