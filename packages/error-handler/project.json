@@ -5,9 +5,9 @@
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",
-      "outputs": ["../../dist/packages/error-handler"],
+      "outputs": ["{workspaceRoot}/dist/packages/error-handler"],
       "options": {
-        "outputs": "../../dist/packages/error-handler",
+        "outputPath": "dist/packages/error-handler",
         "main": "packages/error-handler/src/index.ts",
         "tsConfig": "packages/error-handler/tsconfig.lib.json",
         "assets": []
