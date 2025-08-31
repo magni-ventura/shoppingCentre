@@ -13,8 +13,10 @@
   },
   "include": [
     "src/**/*.ts",
-    "../../packages/error-handler/src/**/*.ts"
-, "../../packages/error-handler/src/index.ts"  ],
+    "../../packages/**/*.ts",
+    "../../packages/error-handler/src/**/*.ts",
+    "../../packages/error-handler/src/index.ts"
+  ],
   "exclude": [
     "out-tsc",
     "dist",
