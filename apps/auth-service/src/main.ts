@@ -2,7 +2,7 @@ import express from 'express';
 import cors from "cors";
 import { errorMiddleware } from "../../../packages/error-handler/src";
 import cookieParser from 'cookie-parser';
-
+import router from './routes/auth-router';
 
 
 //const host = process.env.HOST ?? '0.0.0.0';
@@ -25,6 +25,10 @@ app.use(cookieParser());
 app.get('/', (req, res) => {
     res.send({ 'message': 'Hello API'});
 });
+
+// Routes
+app.use("/api", router);
+
 
 app.use(errorMiddleware);
 
