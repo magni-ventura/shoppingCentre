@@ -23,6 +23,7 @@
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
+    "@nrwl/node": "^19.8.4",
     "@nx/docker": "21.4.1",
     "@nx/esbuild": "21.4.1",
     "@nx/express": "^21.4.1",
