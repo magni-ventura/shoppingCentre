@@ -1,7 +1,10 @@
-import { info } from "console";
-import { version } from "os";
-import { title } from "process";
+//import { info } from "console";
+//import { version } from "os";
+//import { title } from "process";
 import swaggerAutogen from "swagger-autogen";
+import swaggerUi from 'swagger-ui-express';
+import swaggerDocument from './swagger-output.json';
+
 
 const doc = {
   info : {
