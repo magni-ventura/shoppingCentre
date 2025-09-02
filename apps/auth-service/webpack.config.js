@@ -24,6 +24,12 @@ module.exports = {
       // other loaders (ts, js, css, etc.)
     ]
   },
+  resolve: {
+    alias: {
+      path : join(__dirname, '../../packages')
+    },
+    extensions: ['.ts', '.js', '.json'],
+  },
   plugins: [
     new NxAppWebpackPlugin({
       target: 'node',
