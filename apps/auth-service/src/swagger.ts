@@ -1,22 +1,52 @@
-//import { info } from "console";
-//import { version } from "os";
-//import { title } from "process";
-import swaggerAutogen from "swagger-autogen";
-//import swaggerUi from 'swagger-ui-express';
-//import swaggerDocument from './swagger-output.json';
+// apps/auth-service/src/swagger.ts
+import { OpenAPIV3 } from "openapi-types";
 
-
-const doc = {
-  info : {
-    title: "Auth Aervice API",
-    description : "Automatically generated swagger docs",
-    version : "1.0.0"
+export const swaggerDocument: OpenAPIV3.Document = {
+  openapi: "3.0.0",
+  info: {
+    title: "Auth Service API",
+    version: "1.0.0",
+    description: "API documentation for the Auth Service",
   },
-  host : "localhost:6001",
-  schemes: ["http"],
+  servers: [
+    {
+      url: "http://localhost:6001/api",
+      description: "Local Dev Server",
+    },
+  ],
+  paths: {
+    "/register": {
+      post: {
+        tags: ["Auth"],
+        summary: "Register a new user",
+        requestBody: {
+          required: true,
+          content: {
+            "application/json": {
+              schema: {
+                type: "object",
+                properties: {
+                  name: { type: "string" },
+                  email: { type: "string" },
+                  password: { type: "string" },
+                },
+                required: ["name", "email", "password"],
+              },
+            },
+          },
+        },
+        responses: {
+          "200": {
+            description: "OTP sent successfully",
+          },
+          "400": {
+            description: "Validation error",
+          },
+          "409": {
+            description: "User already exists",
+          },
+        },
+      },
+    },
+  },
 };
-
-const outputFile = "./swagger-output.json";
-const endpointsFiles = ["./routes/auth-router.ts"]
-
-swaggerAutogen()(outputFile, endpointsFiles, doc);
