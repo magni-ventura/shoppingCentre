@@ -1,6 +1,5 @@
 {
-  "name": "auth-service-e2e",
-  "root": "apps/auth-service-e2e",
+  "name": "@shopping-centre/auth-service-e2e",
   "sourceRoot": "apps/auth-service-e2e/src",
   "projectType": "application",
   "targets": {

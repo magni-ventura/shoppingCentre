@@ -1,5 +1,5 @@
 {
-  "name": "auth-service",
+  "name": "@shopping-centre/auth-service",
   "root": "apps/auth-service",
   "sourceRoot": "apps/auth-service/src",
   "projectType": "application",
