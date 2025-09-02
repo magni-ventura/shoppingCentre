@@ -7,7 +7,22 @@ module.exports = {
     ...(process.env.NODE_ENV !== 'production' && {
       devtoolModuleFilenameTemplate: '[absolute-resource-path]',
     }),
-    
+  },
+  module: {
+    rules: [
+      {
+        test: /\.ejs$/,
+        use: [
+          {
+            loader: 'ejs-loader',
+            options: {
+              esModule: false // ensures compatibility with CommonJS
+            }
+          }
+        ]
+      },
+      // other loaders (ts, js, css, etc.)
+    ]
   },
   plugins: [
     new NxAppWebpackPlugin({
