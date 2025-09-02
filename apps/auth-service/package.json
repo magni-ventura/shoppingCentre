@@ -3,13 +3,13 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "ts-node src/main.ts",
+    "dev": "node src/main.ts",
     "swagger": "ts-node src/swagger.ts"
   },
   "nx": {
     "name": "auth-service",
     "projectType": "application",
-    "sourceRoot": "auth-service/src",
+    "sourceRoot": "auth-service",
     "targets": {
       "build": {
         "executor": "@nx/esbuild:esbuild",

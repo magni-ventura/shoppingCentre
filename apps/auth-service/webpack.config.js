@@ -1,46 +1,21 @@
-const { NxAppWebpackPlugin } = require('@nx/webpack/app-plugin');
-const { join } = require('path');
-
-module.exports = {
-  output: {
-    path: join(__dirname, 'dist'),
-    ...(process.env.NODE_ENV !== 'production' && {
-      devtoolModuleFilenameTemplate: '[absolute-resource-path]',
-    }),
-  },
-  module: {
-    rules: [
-      {
-        test: /\.ejs$/,
-        use: [
-          {
-            loader: 'ejs-loader',
-            options: {
-              esModule: false // ensures compatibility with CommonJS
+const { merge } = require('webpack-merge');
+const nrwlConfig = require('@nrwl/node/src/utils/webpack/custom-webpack'); // or adjust based on your setup
+module.exports = (config, context) => {
+  return merge(config, {
+    module: {
+      rules: [
+        {
+          test: /\.ejs$/,
+          use: [
+            {
+              loader: 'ejs-loader',
+              options: {
+                // no esModule property explicitly defined here
+              }
             }
-          }
-        ]
-      },
-      // other loaders (ts, js, css, etc.)
-    ]
-  },
-  resolve: {
-    alias: {
-      path : join(__dirname, '../../packages')
-    },
-    extensions: ['.ts', '.js', '.json'],
-  },
-  plugins: [
-    new NxAppWebpackPlugin({
-      target: 'node',
-      compiler: 'tsc',
-      main: './src/main.ts',
-      tsConfig: './tsconfig.app.json',
-      assets: ["./src/assets"],
-      optimization: false,
-      outputHashing: 'none',
-      generatePackageJson: true,
-      sourceMaps: true,
-    })
-  ],
+          ]
+        }
+      ]
+    }
+  });
 };
