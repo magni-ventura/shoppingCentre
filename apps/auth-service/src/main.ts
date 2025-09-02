@@ -5,7 +5,7 @@ import cookieParser from 'cookie-parser';
 import router from './routes/auth-router';
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from './swagger-output.json';
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 
 //const host = process.env.HOST ?? '0.0.0.0';
 //const port = process.env.PORT ? Number(process.env.PORT) : 6001;
@@ -27,7 +27,7 @@ app.use(cookieParser());
 app.get('/', (req, res) => {
     res.send({ 'message': 'Hello API'});
 });
-
+//swagger docs api
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Routes
