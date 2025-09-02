@@ -1,0 +1,41 @@
+{
+  "name": "auth-service-e2e",
+  "root": "apps/auth-service-e2e",
+  "sourceRoot": "apps/auth-service-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/auth-service-e2e/cypress.json",
+        "devServerTarget": "auth-service:serve",
+        "tsConfig": "apps/auth-service-e2e/tsconfig.e2e.json"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "auth-service:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/auth-service-e2e/**/*.ts",
+          "apps/auth-service-e2e/**/*.js"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/apps/auth-service-e2e"
+      ],
+      "options": {
+        "jestConfig": "apps/auth-service-e2e/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
