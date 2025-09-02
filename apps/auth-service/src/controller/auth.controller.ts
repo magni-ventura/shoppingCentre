@@ -1,7 +1,8 @@
+//import { NotFoundError } from './../../../../packages/error-handler/src/index';
 import { Request, Response, NextFunction } from "express";
 import { ValidationRegistrationData } from "../utilities/auth.helper";
 import prisma from "../../../../packages/libs/prisma";
-import { ValidationError } from "error-handler/src";
+import { ValidationError } from "../../../../packages/error-handler/src";
 import { checkOtpRestrictions, trackOtpRequests, sendOtp } from "src/utilities/auth.helper"; // adjust path
 
 // REGISTER A NEW USER
