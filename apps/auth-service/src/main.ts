@@ -4,14 +4,13 @@ import { errorMiddleware } from "../../../packages/error-handler/src";
 import cookieParser from 'cookie-parser';
 import router from './routes/auth-router';
 import swaggerUi from 'swagger-ui-express';
-import swaggerDocument from './swagger-output.json';
+import swaggerDocument from "./swagger-output.json";
 
 
 //const host = process.env.HOST ?? '0.0.0.0';
 //const port = process.env.PORT ? Number(process.env.PORT) : 6001;
 
 const app = express();
-
 app.use(
   cors({
     origin: ["http://localhost:3000"],
