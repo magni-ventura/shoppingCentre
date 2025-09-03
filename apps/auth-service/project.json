@@ -5,12 +5,13 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nx/js:tsc",
+      "executor": "@nx/webpack:webpack",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/auth-service",
+        "target": "node",
         "main": "apps/auth-service/src/main.ts",
         "tsConfig": "apps/auth-service/tsconfig.app.json",
+        "outputPath": "dist/apps/auth-service",
         "assets": [
           "apps/auth-service/src/assets",
           "apps/auth-service/swaggeroutput.json"
@@ -18,9 +19,13 @@
       }
     },
     "serve": {
-      "executor": "@nx/node:node",
+      "executor": "@nx/webpack:webpack",
       "options": {
-        "buildTarget": "@shopping-centre/auth-service:build"
+        "target": "node",
+        "main": "apps/auth-service/src/main.ts",
+        "tsConfig": "apps/auth-service/tsconfig.app.json",
+        "outputPath": "dist/apps/auth-service",
+        "watch": true
       }
     },
     "lint": {
