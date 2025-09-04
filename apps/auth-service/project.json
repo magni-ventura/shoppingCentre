@@ -13,7 +13,6 @@
         "tsConfig": "apps/auth-service/tsconfig.app.json",
         "outputPath": "dist/apps/auth-service",
         "assets": [
-          "apps/auth-service/src/assets",
           "apps/auth-service/swaggeroutput.json"
         ]
       }
