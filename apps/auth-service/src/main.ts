@@ -38,7 +38,7 @@ app.use(errorMiddleware);
 
 const port = process.env.PORT || 6001;
 const server = app.listen(port, () => {
-  console.log(`Auth Service is Running At http://localhost:${port}/api`);
+  console.log(`Auth Service is Running At http://localhost${port}/api`);
 });
 
 server.on("error", (err) => {
