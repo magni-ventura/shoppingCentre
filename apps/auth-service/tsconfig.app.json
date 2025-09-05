@@ -15,9 +15,6 @@
     "paths": {
       "error-handler/*": [
         "../../packages/error-handler/*",
-        "../../packages/**/*.ts",
-        "../../packages/error-handler/**/*.ts",
-        "../../packages/error-handler/libs/*"
       ]
     }
   },
