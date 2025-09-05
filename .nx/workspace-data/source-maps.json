@@ -1,0 +1,146 @@
+{
+  "packages": {
+    "root": [
+      "packages/project.json",
+      "nx/core/project-json"
+    ],
+    "name": [
+      "packages/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "packages/package.json",
+      "nx/core/package-json"
+    ],
+    "tags.npm:private": [
+      "packages/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.targetGroups": [
+      "packages/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js": [
+      "packages/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageName": [
+      "packages/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.packageMain": [
+      "packages/package.json",
+      "nx/core/package-json"
+    ],
+    "metadata.js.isInPackageManagerWorkspaces": [
+      "packages/package.json",
+      "nx/core/package-json"
+    ],
+    "targets": [
+      "packages/package.json",
+      "nx/core/package-json"
+    ],
+    "$schema": [
+      "packages/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "packages/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "packages/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build": [
+      "packages/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.executor": [
+      "packages/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.outputs": [
+      "packages/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options": [
+      "packages/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.outputPath": [
+      "packages/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.main": [
+      "packages/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.tsConfig": [
+      "packages/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.assets": [
+      "packages/project.json",
+      "nx/core/project-json"
+    ]
+  },
+  "packages/error-handler": {
+    "root": [
+      "packages/error-handler/project.json",
+      "nx/core/project-json"
+    ],
+    "name": [
+      "packages/error-handler/project.json",
+      "nx/core/project-json"
+    ],
+    "sourceRoot": [
+      "packages/error-handler/project.json",
+      "nx/core/project-json"
+    ],
+    "projectType": [
+      "packages/error-handler/project.json",
+      "nx/core/project-json"
+    ],
+    "tags": [
+      "packages/error-handler/project.json",
+      "nx/core/project-json"
+    ],
+    "targets": [
+      "packages/error-handler/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build": [
+      "packages/error-handler/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.executor": [
+      "packages/error-handler/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.outputs": [
+      "packages/error-handler/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options": [
+      "packages/error-handler/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.outputPath": [
+      "packages/error-handler/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.main": [
+      "packages/error-handler/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.tsConfig": [
+      "packages/error-handler/project.json",
+      "nx/core/project-json"
+    ],
+    "targets.build.options.assets": [
+      "packages/error-handler/project.json",
+      "nx/core/project-json"
+    ]
+  }
+}

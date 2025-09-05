@@ -1,0 +1,21 @@
+{
+  "run": {
+    "command": "nx run @shopping-centre/auth-service:serve",
+    "startTime": "2025-09-05T11:53:33.856Z",
+    "endTime": "2025-09-05T11:53:36.325Z",
+    "inner": false
+  },
+  "tasks": [
+    {
+      "taskId": "@shopping-centre/auth-service:serve",
+      "target": "serve",
+      "projectName": "@shopping-centre/auth-service",
+      "hash": "4793609255761089951",
+      "startTime": "2025-09-05T11:53:33.877Z",
+      "endTime": "2025-09-05T11:53:36.319Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 1
+    }
+  ]
+}
