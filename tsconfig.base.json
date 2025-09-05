@@ -20,13 +20,12 @@
     "target": "es2022",
     "customConditions": ["development"],
     "baseUrl": ".",
-
     "paths": {
-      "@packages/*": ["packages/*", "packages/*/src/index.ts"],
-    "@shopping-centre/*": ["packages/*/src/index.ts"],
-    "@shopping-centre/lib": ["lib/src/index.ts"],
-    "@shopping-centre/packages": ["packages/src/index.ts"],
-    "@shopping-centre/error-handler": ["packages/error-handler/src/index.ts"],
+      "@packages/*": ["packages/*/src"],
+      "@shopping-centre/auth-service/*": ["apps/auth-service/src/*"],
+      "@shopping-centre/api-gateway/*": ["apps/api-gateway/src/*"],
+      "@shopping-centre/lib/*": ["lib/src/*"],
+      "@shopping-centre/error-handler": ["packages/error-handler/src/index.ts"]
     }
   }
 }
