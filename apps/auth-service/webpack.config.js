@@ -2,6 +2,7 @@ const { NxAppWebpackPlugin } = require('@nx/webpack/app-plugin');
 const { join, resolve } = require('path');
 
 module.exports = {
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   output: {
     path: join(__dirname, '../../dist/apps/auth-service'),
     ...(process.env.NODE_ENV !== 'production' && {
@@ -10,14 +11,15 @@ module.exports = {
   },
   resolve: {
     alias: {
-      "@packages": resolve(__dirname, "../../packages"),
+      '@packages': resolve(__dirname, '../../packages'),
     },
-    extensions: [".ts", ".js"],
+    extensions: ['.ts', '.js'],
   },
   plugins: [
     new NxAppWebpackPlugin({
       target: 'node',
       compiler: 'tsc',
+      // ✅ force correct entry
       main: join(__dirname, 'src/main.ts'),
       tsConfig: join(__dirname, 'tsconfig.app.json'),
       assets: [join(__dirname, 'src/assets')],

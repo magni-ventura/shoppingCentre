@@ -2,6 +2,7 @@ const { NxAppWebpackPlugin } = require('@nx/webpack/app-plugin');
 const { join, resolve } = require('path');
 
 module.exports = {
+  mode: process.env.NODE_ENV === "production" ? "production" : "development",
   output: {
     path: join(__dirname, '../../dist/apps/api-gateway'),
     ...(process.env.NODE_ENV !== 'production' && {

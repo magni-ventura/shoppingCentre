@@ -12,14 +12,7 @@
         "main": "apps/auth-service/src/main.ts",
         "tsConfig": "apps/auth-service/tsconfig.app.json",
         "outputPath": "dist/apps/auth-service",
-        "assets": [
-          "apps/auth-service/swaggeroutput.json",
-          {
-            "input": "apps/auth-service/src/assets",
-            "glob": "**/*",
-            "output": "src/assets"
-          }
-        ]
+        "assets": ["apps/auth-service/swaggeroutput.json"]
       }
     },
     "serve": {
@@ -30,20 +23,6 @@
         "tsConfig": "apps/auth-service/tsconfig.app.json",
         "outputPath": "dist/apps/auth-service",
         "watch": true
-      }
-    },
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "options": {
-        "lintFilePatterns": ["apps/auth-service/**/*.ts"]
-      }
-    },
-    "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["coverage/apps/auth-service"],
-      "options": {
-        "jestConfig": "apps/auth-service/jest.config.js",
-        "passWithNoTests": true
       }
     }
   },
