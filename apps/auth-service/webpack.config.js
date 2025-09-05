@@ -2,7 +2,8 @@ const { NxAppWebpackPlugin } = require('@nx/webpack/app-plugin');
 const { join, resolve } = require('path');
 
 module.exports = {
-  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+  mode: 'development',
+  entry: join(__dirname, 'src/main.ts'),
   output: {
     path: join(__dirname, '../../dist/apps/auth-service'),
     ...(process.env.NODE_ENV !== 'production' && {

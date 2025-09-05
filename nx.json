@@ -1,73 +1,40 @@
 {
-  "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "defaultBase": "master",
-  "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
-    "production": [
-      "default",
-      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
-      "!{projectRoot}/tsconfig.spec.json",
-      "!{projectRoot}/jest.config.[jt]s",
-      "!{projectRoot}/src/test-setup.[jt]s",
-      "!{projectRoot}/test-setup.[jt]s"
-    ],
-    "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
-  },
-  "nxCloudId": "68af057a1cd5f2584c53e4e8",
-  "plugins": [
-    {
-      "plugin": "@nx/js/typescript",
+  "name": "auth-service",
+  "sourceRoot": "apps/auth-service/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
       "options": {
-        "typecheck": {
-          "targetName": "typecheck"
-        },
-        "build": {
-          "targetName": "build",
-          "configName": "tsconfig.lib.json",
-          "buildDepsName": "build-deps",
-          "watchDepsName": "watch-deps"
-        }
+        "target": "node",
+        "main": "apps/auth-service/src/main.ts",
+        "outputPath": "dist/apps/auth-service",
+        "tsConfig": "apps/auth-service/tsconfig.app.json",
+        "webpackConfig": "apps/auth-service/webpack.config.js"
       }
     },
-    {
-      "plugin": "@nx/jest/plugin",
+    "serve": {
+      "executor": "@nx/webpack:dev-server",
       "options": {
-        "targetName": "test"
-      },
-      "exclude": ["apps/auth-service-e2e/**/*"]
-    },
-    {
-      "plugin": "@nx/docker",
-      "options": {
-        "buildTarget": "docker:build",
-        "runTarget": "docker:run"
+        "buildTarget": "auth-service:build"
       }
-    },
-    {
-      "plugin": "@nx/webpack/plugin",
-      "options": {
-        "buildTargetName": "build",
-        "serveTargetName": "serve",
-        "previewTargetName": "preview",
-        "buildDepsTargetName": "build-deps",
-        "watchDepsTargetName": "watch-deps",
-        "serveStaticTargetName": "serve-static"
-      }
-    }
-  ],
-  "targetDefaults": {
-    "@nx/esbuild:esbuild": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
     },
     "test": {
-      "dependsOn": ["^build"]
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/apps/auth-service"],
+      "options": {
+        "jestConfig": "apps/auth-service/jest.config.ts",
+        "passWithNoTests": true
+      }
     },
-    "@nx/js:tsc": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/auth-service/**/*.ts"]
+      }
     }
-  }
+  },
+  "tags": []
 }
