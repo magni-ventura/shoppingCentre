@@ -18,8 +18,9 @@ module.exports = {
     new NxAppWebpackPlugin({
       target: 'node',
       compiler: 'tsc',
-      main: join(__dirname, 'src/main.ts'),
-      tsConfig: join(__dirname, 'tsconfig.app.json'),
+      main: join(__dirname, "apps/auth-service/src/main.ts"
+),
+      tsConfig: join(__dirname, "apps/auth-service/tsconfig.app.json"),
       assets: [join(__dirname, 'src/assets')],
       optimization: false,
       outputHashing: 'none',

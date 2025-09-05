@@ -10,10 +10,15 @@
       "options": {
         "target": "node",
         "main": "apps/auth-service/src/main.ts",
-        "tsConfig": "apps/auth-service/tscsonfig.app.json",
+        "tsConfig": "apps/auth-service/tsconfig.app.json",
         "outputPath": "dist/apps/auth-service",
         "assets": [
-          "apps/auth-service/swaggeroutput.json"
+          "apps/auth-service/swaggeroutput.json",
+          {
+            "input": "apps/auth-service/src/assets",
+            "glob": "**/*",
+            "output": "src/assets"
+          }
         ]
       }
     },

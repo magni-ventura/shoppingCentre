@@ -1,0 +1,32 @@
+{
+  "name": "@shopping-centre/api-gateway",
+  "root": "apps/api-gateway",
+  "sourceRoot": "apps/api-gateway/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "target": "node",
+        "main": "apps/api-gateway/src/main.ts",
+        "tsConfig": "apps/api-gateway/tsconfig.app.json",
+        "outputPath": "dist/apps/api-gateway",
+        "assets": [
+          "apps/api-gateway/src/assets"
+        ]
+      }
+    },
+    "serve": {
+      "executor": "@nx/webpack:webpack",
+      "options": {
+        "target": "node",
+        "main": "apps/api-gateway/src/main.ts",
+        "tsConfig": "apps/api-gateway/tsconfig.app.json",
+        "outputPath": "dist/apps/api-gateway",
+        "watch": true
+      }
+    }
+  },
+  "tags": []
+}
