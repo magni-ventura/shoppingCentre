@@ -19,7 +19,7 @@ module.exports = {
     new NxAppWebpackPlugin({
       target: 'node',
       compiler: 'tsc',
-      // ✅ force correct entry
+      // ✅ explicitly point to your main.ts
       main: join(__dirname, 'src/main.ts'),
       tsConfig: join(__dirname, 'tsconfig.app.json'),
       assets: [join(__dirname, 'src/assets')],
