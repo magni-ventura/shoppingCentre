@@ -2,7 +2,10 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "dist",
-    "types": ["node"],
+    "types": [
+      "node",
+      "express",
+    ],
     "rootDir": "src",
     "tsBuildInfoFile": "dist/tsconfig.app.tsbuildinfo",
     "resolveJsonModule": true,
@@ -10,15 +13,18 @@
 
     "baseUrl": ".",
     "paths": {
-      "error-handler/*": ["../../packages/error-handler/*"]
+      "error-handler/*": [
+        "../../packages/error-handler/*",
+        "../../packages/**/*.ts",
+        "../../packages/error-handler/**/*.ts",
+        "../../packages/error-handler/libs/*"
+      ]
     }
   },
   "include": [
     "src/**/*",
     "src/**/*.ts",
-    "../../packages/**/*.ts",
-    "../../packages/error-handler/src/**/*.ts",
-    "../../packages/error-handler/src/index.ts"
+
   ],
   "exclude": [
     "out-tsc",

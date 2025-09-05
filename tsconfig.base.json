@@ -20,6 +20,7 @@
     "target": "es2022",
     "customConditions": ["development"],
     "baseUrl": ".",
+
     "paths": {
       "@packages/*": ["packages/*", "packages/*/src/index.ts"],
     "@shopping-centre/*": ["packages/*/src/index.ts"],
