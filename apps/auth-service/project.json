@@ -12,13 +12,16 @@
         "main": "apps/auth-service/src/main.ts",
         "tsConfig": "apps/auth-service/tsconfig.app.json",
         "outputPath": "dist/apps/auth-service",
-        "assets": ["apps/auth-service/swaggeroutput.json"]
+        "assets": ["apps/auth-service/src/swagger.json"]
       }
     },
     "serve": {
-      "executor": "@nx/node:execute",
+      "executor": "@nx/webpack:webpack",
       "options": {
-        "buildTarget": "@shopping-centre/auth-service:build",
+        "target": "node",
+        "main": "apps/auth-service/src/main.ts",
+        "tsConfig": "apps/auth-service/tsconfig.app.json",
+        "outputPath": "dist/apps/auth-service",
         "watch": true
       }
     },
