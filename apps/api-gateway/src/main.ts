@@ -51,13 +51,23 @@ app.get("/gateway-health", (req, res) => {
 //  res.send({ message: 'Welcome to api-gateway!' });
 //});
 
-app.use("/", proxy("http://127.0.0.1::6001"));
+app.use("/", proxy("http://127.0.0.1:6001"));
 
 const port = process.env.PORT || 8080;
 const server = app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}/api`);
+  console.log(`API Gateway is Listening at http://localhost:${port}/api`);
 });
 
 server.on("error", (err) => {
   console.log("Server Error:", err);
+});
+
+// Graceful shutdown
+process.on('SIGINT', () => {
+  console.log('SIGINT received: shutting down api-gateway');
+  server.close(() => process.exit(0));
+});
+process.on('SIGTERM', () => {
+  console.log('SIGTERM received: shutting down api-gateway');
+  server.close(() => process.exit(0));
 });

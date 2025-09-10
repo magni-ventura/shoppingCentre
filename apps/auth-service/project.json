@@ -16,12 +16,9 @@
       }
     },
     "serve": {
-      "executor": "@nx/webpack:webpack",
+      "executor": "@nx/node:execute",
       "options": {
-        "target": "node",
-        "main": "apps/auth-service/src/main.ts",
-        "tsConfig": "apps/auth-service/tsconfig.app.json",
-        "outputPath": "dist/apps/auth-service",
+        "buildTarget": "@shopping-centre/auth-service:build",
         "watch": true
       }
     },

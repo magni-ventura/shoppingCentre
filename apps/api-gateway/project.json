@@ -12,19 +12,14 @@
         "main": "apps/api-gateway/src/main.ts",
         "tsConfig": "apps/api-gateway/tsconfig.app.json",
         "outputPath": "dist/apps/api-gateway",
-        "assets": [
-          "apps/api-gateway/src/assets"
-        ]
+        "assets": ["apps/api-gateway/src/assets"],
+        "webpackConfig": "apps/api-gateway/webpack.config.js"
       }
     },
     "serve": {
-      "executor": "@nx/webpack:webpack",
+      "executor": "@nx/webpack:dev-server",
       "options": {
-        "target": "node",
-        "main": "apps/api-gateway/src/main.ts",
-        "tsConfig": "apps/api-gateway/tsconfig.app.json",
-        "outputPath": "dist/apps/api-gateway",
-        "watch": true
+        "buildTarget": "@shopping-centre/api-gateway:build"
       }
     }
   },

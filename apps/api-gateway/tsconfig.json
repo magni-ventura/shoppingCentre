@@ -1,12 +1,11 @@
 {
   "extends": "../../tsconfig.base.json",
   "files": [],
-  "include": [],
   "references": [
     {
       "path": "./tsconfig.app.json"
-    },
-    {
+    }
+  ],
   "compilerOptions": {
     "module": "nodenext",
     "target": "es2022",
@@ -16,12 +15,15 @@
     "resolveJsonModule": true,
     "strict": true,
     "baseUrl": "."
-    },
+  },
   "include": [
     "apps/**/*",
-    "packages/**/**/*"   // 👈 add this so error-handler is picked up
-  ]
-}
-
+    "packages/**/*"  // 👈 ensures shared packages like error-handler are picked up
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.spec.ts",
+    "**/*.test.ts"
   ]
 }
