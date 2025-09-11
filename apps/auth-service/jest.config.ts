@@ -20,6 +20,6 @@ export default {
   coverageDirectory: 'test-output/jest/coverage',
   moduleNameMapper: {
     '^@packages/error-handler/src$':
-      '<rootDir>/../../../packages/error-handler/src/index.ts',
+      '<rootDir>/../../../shoppingCentre/packages/error-handler/src/index.ts',
   },
 };

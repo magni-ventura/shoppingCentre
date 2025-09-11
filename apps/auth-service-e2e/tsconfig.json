@@ -9,7 +9,7 @@
   "include": [
     "jest.config.ts",
     "src/**/*.ts",
-    "packages/**/**/*"   // 👈 add this so error-handler is picked up
+    "../../../shoppingCentre/packages/**/**/*"   // 👈 add this so error-handler is picked up
   ],
   "references": []
 }

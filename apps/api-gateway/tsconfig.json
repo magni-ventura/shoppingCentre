@@ -18,7 +18,7 @@
   },
   "include": [
     "apps/**/*",
-    "packages/**/*"  // 👈 ensures shared packages like error-handler are picked up
+    "../../../shoppingCentre/packages/**/*"  // 👈 ensures shared packages like error-handler are picked up
   ],
   "exclude": [
     "node_modules",

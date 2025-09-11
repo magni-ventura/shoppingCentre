@@ -2,7 +2,7 @@ const { NxAppWebpackPlugin } = require('@nx/webpack/app-plugin');
 const { join, resolve } = require('path');
 
 module.exports = {
-  mode: process.env.NODE_ENV === "production" ? "production" : "development",
+  mode: process.env.NODE_ENV === "production" ? "production" : "production",
   entry: join(__dirname, 'src/main.ts'),
   output: {
     path: join(__dirname, '../../dist/apps/auth-service'),
@@ -12,7 +12,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@packages': resolve(__dirname, '../../../packages'),
+      '@packages': resolve(__dirname, '../../../shoppingCentre/packages/*'),
     },
     extensions: ['.ts', '.js', '.json'],
   },

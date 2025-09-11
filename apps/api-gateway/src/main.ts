@@ -47,9 +47,9 @@ app.get("/gateway-health", (req, res) => {
 
 //app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
-//app.get('/api', (req, res) => {
-//  res.send({ message: 'Welcome to api-gateway!' });
-//});
+// app.get('/api', (req, res) => {
+//   res.send({ message: 'Welcome to api-gateway!' });
+// });
 
 app.use("/", proxy("http://127.0.0.1:6001"));
 
