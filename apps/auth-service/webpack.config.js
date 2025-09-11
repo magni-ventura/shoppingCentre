@@ -12,7 +12,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@packages': resolve(__dirname, '../../../shoppingCentre/packages/*'),
+      '@packages/error-handler': resolve(__dirname, '../../packages/error-handler/src'),
     },
     extensions: ['.ts', '.js', '.json'],
   },

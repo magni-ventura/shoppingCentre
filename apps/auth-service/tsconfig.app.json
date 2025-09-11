@@ -9,7 +9,7 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "@packages/*": ["../../../shoppingCentre/packages/*"]
+      "@packages/error-handler": ["../../packages/error-handler/src"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.json"],

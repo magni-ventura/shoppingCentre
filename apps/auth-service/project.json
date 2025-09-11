@@ -9,20 +9,18 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "target": "node",
+        "compiler": "tsc",
         "main": "apps/auth-service/src/main.ts",
         "tsConfig": "apps/auth-service/tsconfig.app.json",
         "outputPath": "dist/apps/auth-service",
-        "assets": ["apps/auth-service/src/swagger.json"]
+        "assets": ["apps/auth-service/src/swagger.json"],
+        "webpackConfig": "apps/auth-service/webpack.config.js"
       }
     },
     "serve": {
-      "executor": "@nx/webpack:webpack",
+      "executor": "@nx/webpack:dev-server",
       "options": {
-        "target": "node",
-        "main": "apps/auth-service/src/main.ts",
-        "tsConfig": "apps/auth-service/tsconfig.app.json",
-        "outputPath": "dist/apps/auth-service",
-        "watch": true
+        "buildTarget": "@shopping-centre/auth-service:build"
       }
     },
     "lint": {
