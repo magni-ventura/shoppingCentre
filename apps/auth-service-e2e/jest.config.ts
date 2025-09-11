@@ -21,4 +21,8 @@ export default {
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageDirectory: 'test-output/jest/coverage',
+  moduleNameMapper: {
+    '^@packages/error-handler/src$':
+      '<rootDir>/../../../packages/error-handler/src/index.ts',
+  },
 };

@@ -9,7 +9,7 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "@packages/*": ["../../packages/*"]
+      "@packages/*": ["../../../packages/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.json"],
