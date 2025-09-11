@@ -13,6 +13,8 @@ module.exports = {
   resolve: {
     alias: {
       '@packages/error-handler': resolve(__dirname, '../../packages/error-handler/src'),
+      '@packages/libs/prisma': resolve(__dirname, '../../packages/libs/prisma'),
+      '@packages/libs/redis': resolve(__dirname, '../../packages/libs/redis'),
     },
     extensions: ['.ts', '.js', '.json'],
   },

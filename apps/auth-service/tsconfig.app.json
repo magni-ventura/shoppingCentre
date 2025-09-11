@@ -9,7 +9,9 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "@packages/error-handler": ["../../packages/error-handler/src"]
+      "@packages/error-handler": ["../../packages/error-handler/src"],
+      "@packages/libs/prisma": ["../../packages/libs/prisma"],
+      "@packages/libs/redis": ["../../packages/libs/redis"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.json"],
